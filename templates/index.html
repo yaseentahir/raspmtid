@@ -1,0 +1,62 @@
+<html style="background-image: url('static/back.jpg');  background-attachment: fixed; background-size: cover;" >
+  <head>
+    <body>
+    <title>Rod Tacker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='vendor/axios/axios.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </head>
+  <style>
+    .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    .tital {
+      color: black;
+      padding: 40px;
+      text-align: center;
+      height: 10px;
+    }
+    </style>
+  
+  <section id="streaming_viewer" >
+      <h1 align="center" style="font-size:50px" class="tital" ><strong>Rod Tracker </strong></h1>
+      <img id="background" class="center" src="{{ url_for('video_feed') }}" style="width: 80%;height:60%;"  >
+    </section>
+
+    <section id="actions" >
+      <h2 >Actions</h2>
+        <div>
+          <!-- Button to update the system's status -->
+          <button onclick="updateStatus()" class="button">Update status</button>
+
+          <button onclick="requestStartMotor()"class="button">Start Motor</button>
+          <button onclick="updateTime()"class="button">Stop Motor</button>
+          <!-- 'Start motor' button with corresponding request after clicking -->
+          <!-- ... -->
+        </div>
+  </section>
+
+  <section id="monitoring_info">
+    <h2>Monitoring information</h2>
+    <p><b>Current Shape from Open CV : </b>
+      <b>Circle : </b><span id="eight_open_cv"></span>,
+      <b>Triangle : </b><span id="three_open_cv"></span>,
+      <b>Square : </b><span id="one_open_cv"></span>
+    </p>
+  
+  </section>
+
+ 
+
+
+  </body>
+</html>
